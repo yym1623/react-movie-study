@@ -1,15 +1,37 @@
-import { useCounterStore } from '../store/counterStore.ts'
-
+import { useCounterStore } from '../stores/counterStore.ts'
+import { Link } from 'react-router'
 /**
  * 홈 페이지
  * - Zustand 스토어 사용 예시 (가장 많이 쓰는 패턴)
  *   const { count, increase } = useCounterStore()
  */
-export function HomePage() {
+export default function HomePage() {
   const { count, increase, reset } = useCounterStore()
 
   return (
     <section className="space-y-4">
+      <header className="border-b border-slate-800 bg-slate-950/70 backdrop-blur">
+      <div className="mx-auto flex max-w-4xl items-center justify-between px-4 py-3">
+        <span className="text-lg font-semibold text-sky-400">
+          React + Router + Zustand + Tailwind
+        </span>
+        <nav className="flex gap-3 text-sm">
+          <Link
+            to="/"
+            className="rounded-md px-3 py-1.5 hover:bg-slate-800/80"
+          >
+            홈
+          </Link>
+          <Link
+            to="/about"
+            className="rounded-md px-3 py-1.5 hover:bg-slate-800/80"
+          >
+            설명
+          </Link>
+        </nav>
+      </div>
+    </header>
+
       <h1 className="text-2xl font-semibold">홈 (Counter + Store 예시)</h1>
 
       <p className="text-sm text-slate-300">

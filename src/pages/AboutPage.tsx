@@ -1,10 +1,10 @@
-import { useCounterStore } from '../store/counterStore.ts'
+import { useCounterStore } from '../stores/counterStore.ts'
 
 /**
  * 설명 페이지
  * - Router + Store 구조를 말로 정리해둔 페이지
  */
-export function AboutPage() {
+export default function AboutPage() {
   const count = useCounterStore((state) => state.count)
 
   return (
@@ -14,9 +14,9 @@ export function AboutPage() {
       <div className="space-y-2 text-sm text-slate-200">
         <p>
           <strong className="text-sky-300">1. Router</strong> —{' '}
-          <code>main.tsx</code> 에서 <code>{'<BrowserRouter>'}</code>로 전체를
-          감싸고, <code>App.tsx</code> 안에서 <code>{'<Routes>'}</code>와{' '}
-          <code>{'<Route>'}</code>로 페이지를 나눕니다.
+          <code>main.tsx</code> 에서 <code>createBrowserRouter</code>로 라우트를 정의하고,{' '}
+          <code>RouterProvider</code>로 렌더합니다. <code>App.tsx</code>는
+          레이아웃이며 <code>{'<Outlet />'}</code>에 자식 페이지가 렌더됩니다.
         </p>
         <p>
           <strong className="text-sky-300">2. Store(Zustand)</strong> —{' '}
