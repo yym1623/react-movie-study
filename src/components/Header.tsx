@@ -25,6 +25,7 @@ export default function Header() {
 
 
       <header>
+        {/* <NavLink> 컴포넌트의 end 속성을 추가해 주소가 정확히 일치할 때만 내비게이션 버튼이 활성화되도록 설정합니다. */}
         {/* end - 중첩으로인해 해당 페이지에서만 동작되게끔 -> 중첩들은 안 먹게하기위해 ex) network요청 중첩요청막는건가 */}
         <nav className={styles.nav}>
           {navigations.map(nav => (
