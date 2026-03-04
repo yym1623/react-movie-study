@@ -6,7 +6,9 @@ export default function DefaultLayout() {
   return (
     <>  
       <Header />
-      <Outlet />
+      <main className="container p-4">
+       <Outlet />
+      </main>
       <ScrollRestoration />
     </>
   )

@@ -18,6 +18,8 @@ async function getUser() {
 }
 
 // 페이지 접근 시 호출되는 로더(Loader) 함수!
+
+// router - loader로 사용하면 컴포넌트 연결만으로 첫번째 인자로 해당 요청한 url이 담긴다, 거기 안 메소드들이 같이 담긴다
 export async function requiresAuth({ request }: { request: Request }) {
   const user = await getUser()
   if (!user) {

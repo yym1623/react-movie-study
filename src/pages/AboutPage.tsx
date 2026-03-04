@@ -1,9 +1,5 @@
-import { useCounterStore } from '../stores/counterStore.ts'
+import { useCounterStore } from '@/stores/counterStore.ts'
 
-/**
- * 설명 페이지
- * - Router + Store 구조를 말로 정리해둔 페이지
- */
 export default function AboutPage() {
   const count = useCounterStore((state) => state.count)
 

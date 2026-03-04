@@ -1,32 +1,20 @@
-// NavLink - Link 확장형 -> 현재 페이지 주소와 링크된 페이지 주소가 같으면 클래스 추가
-// Link - 단순 페이지 이동
-// redirect - 리다이렉션
-// useNavigate - 요소로 하면 해당 화면오면 리다이렉트 된다, 함수로 하면 해당 페이지로 이동하는 함수 이용가능, 히스토리 기능 -1, 1로 앞 뒤이동도 가능
-// 요소로하면 - <Navigate to="/signin" replace /> 페이지 렌더링될때 바로 to쪽으로 리렌더링된다
 import { NavLink } from 'react-router'
 
 import styles from '@/styles/Header.module.css'
 
 export default function Header() {
-  // const navigate = useNavigate()
   
   const navigations = [
     { to: '/', label: 'Home' },
     { to: '/about', label: 'About' },
+    { to: '/signin', label: 'SignIn' },
     { to: '/movies', label: 'Movies' },
     { to: '/movies/tt4154796', label: 'Movie(Avengers: Endgame)' }
 
   ]
   return (
     <div>
-      {/* link, navLink att */}
-      {/* att - replace - history.replace() -> 이전 페이지 갈때 안 돌아간다 */}
-      {/* att - preventScrollReset -> 스크롤 옵션 막아준다 */}
-
-
       <header>
-        {/* <NavLink> 컴포넌트의 end 속성을 추가해 주소가 정확히 일치할 때만 내비게이션 버튼이 활성화되도록 설정합니다. */}
-        {/* end - 중첩으로인해 해당 페이지에서만 동작되게끔 -> 중첩들은 안 먹게하기위해 ex) network요청 중첩요청막는건가 */}
         <nav className={styles.nav}>
           {navigations.map(nav => (
             <NavLink
