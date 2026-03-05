@@ -2,7 +2,6 @@ import { useCounterStore } from '@/stores/counterStore.ts'
 
 export default function HomePage() {
   const { count, increase, reset } = useCounterStore()
-
   return (
     <section className="space-y-4">
       <header className="border-b border-slate-800 bg-slate-950/70 backdrop-blur">
